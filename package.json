@@ -1,5 +1,15 @@
 {
   "name": "blocknote-vue",
+  "about": "BlockNote use veaury to provide Vue.js components for BlockNote editor.",
+  "tags": [
+    "blocknote",
+    "vue",
+    "editor",
+    "notion-editor",
+    "slate",
+    "veaury",
+    "tiptap"
+  ],
   "version": "0.1.3",
   "files": [
     "dist"
