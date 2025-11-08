@@ -10,7 +10,7 @@
     "veaury",
     "tiptap"
   ],
-  "version": "0.1.3",
+  "version": "0.1.5",
   "files": [
     "dist"
   ],
@@ -18,7 +18,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "publish": "vite build && pnpm publish dist --no-git-checks"
   },
   "dependencies": {
     "@blocknote/code-block": "^0.41.1",

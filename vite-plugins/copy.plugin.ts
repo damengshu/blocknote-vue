@@ -1,4 +1,4 @@
-import { copyFileSync, writeFileSync } from 'node:fs'
+import { copyFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import type { Plugin } from 'vite'
 
@@ -71,6 +71,16 @@ export function copyPackageJsonPlugin(): Plugin {
 
         // 如果需要，可以复制 README.md 等其他文件到 dist 目录
         copyFileSync(join(__dirname, '../README.md'), join(__dirname, '../dist', 'README.md'))
+
+        // 复制 blocknote-vue.d.ts 到 dist/types/
+        const src = join(__dirname, '../types/blocknote-vue.d.ts')
+        const destDir = join(__dirname, '../dist/types')
+        const dest = join(destDir, 'blocknote-vue.d.ts')
+        if (!existsSync(destDir)) {
+          mkdirSync(destDir, { recursive: true })
+        }
+        copyFileSync(src, dest)
+        console.log('blocknote-vue.d.ts copied to dist/types/')
       } catch (error) {
         console.error('Error while copying and modifying package.json:', error)
       }

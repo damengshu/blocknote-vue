@@ -5,7 +5,7 @@
 ## 安装
 
 ```bash
-npm install blocknote blocknote-vue
+npm install blocknote-vue
 ```
 
 ## 快速开始
