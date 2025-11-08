@@ -13,10 +13,10 @@ export function copyPackageJsonPlugin(): Plugin {
           version: packageJson.version,
           main: './es/packages/index.mjs',
           module: './es/packages/index.mjs',
-          types: './types/index.d.ts',
+          types: './types/blocknote-vue.d.ts',
           exports: {
             '.': {
-              types: './types/index.d.ts',
+              types: './types/blocknote-vue.d.ts',
               import: './es/packages/index.mjs',
               require: './lib/packages/index.js',
             },
@@ -53,6 +53,7 @@ export function copyPackageJsonPlugin(): Plugin {
               ],
               import: './es/packages/version.mjs',
             },
+            './types/blocknote-vue.d.ts': './types/blocknote-vue.d.ts',
             './*': './*',
           },
           peerDependencies: packageJson.peerDependencies,

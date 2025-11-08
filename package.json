@@ -21,6 +21,9 @@
     "preview": "vite preview",
     "publish": "vite build && pnpm publish dist --no-git-checks"
   },
+  "peerDependencies": {
+    "@blocknote/core": "^0.41.1"
+  },
   "dependencies": {
     "@blocknote/code-block": "^0.41.1",
     "@blocknote/core": "^0.41.1",

@@ -2,6 +2,10 @@ import { BlockNoteEditor } from "@blocknote/core"
 import type { DefineComponent, ShallowRef } from "vue"
 
 declare module 'blocknote-vue' {
+  type Optional<T> = {
+    [K in keyof T]?: T[K]
+  }
+
   interface BlockNoteVueProps {
     editorProps?: any
     theme?: 'light' | 'dark'
@@ -22,9 +26,10 @@ declare module 'blocknote-vue' {
     {},
     BlockNoteVueEmits,
     {},
-    Exposed
+    Optional<Exposed>
   >
   export default BlockNoteVue;
+  export const BlockNoteView: typeof BlockNoteVue;
 
   export interface Exposed {
     editor: ShallowRef<BlockNoteEditor | null>
